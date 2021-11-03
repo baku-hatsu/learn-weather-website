@@ -5,6 +5,9 @@ const { getGeocode } = require("./utils/geocode");
 const { getWeather } = require("./utils/weather");
 
 const app = express();
+
+const PORT = process.env.PORT || 3000;
+
 const publicDir = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../view");
 const partialsPath = path.join(__dirname, "../template");
@@ -49,4 +52,4 @@ app.get("*", (req, res) => {
     });
 });
 
-app.listen(3000, () => console.log("Server is up at http://localhost:3000/"));
+app.listen(PORT, () => console.log(`Server is up at http://localhost:${PORT}/`));
